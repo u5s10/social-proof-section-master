@@ -84,12 +84,165 @@ body {
   display: grid;
   width: 100%;
   place-items: center;
-  padding: 1.250rem;
+  padding: 1.25rem;
 }
 
-.social-proof-section {
+.social-proof {
   max-width: 22.5rem;
   display: -ms-grid;
   display: grid;
+  grid: "desc" -webkit-min-content "reviews" -webkit-min-content "buyers" -webkit-min-content / 1fr;
+  grid: "desc" min-content "reviews" min-content "buyers" min-content / 1fr;
+}
+
+.social-proof .description {
+  grid-area: desc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  gap: 1.25rem;
+  text-align: center;
+}
+
+.social-proof .description .advert__header {
+  color: #502050;
+  font-size: 1.75rem;
+  margin-top: 2.5rem;
+  padding: 0 1.5rem;
+  line-height: 1;
+}
+
+.social-proof .description .advert__content {
+  color: #937b92;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0 0.5rem;
+}
+
+.social-proof .company-reviews {
+  grid-area: reviews;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 2rem;
+  margin: 2.5rem 0;
+}
+
+.social-proof .company-reviews .review {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.625rem;
+}
+
+.social-proof .company-reviews .review__stars {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  gap: 0.3125rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.social-proof .company-reviews .review__author {
+  text-align: center;
+  color: #502050;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+.social-proof .buyers {
+  grid-area: buyers;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.social-proof .buyers .buyer-card {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: #502050;
+  color: white;
+  padding: 1.5625rem 1.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  gap: 1.25rem;
+}
+
+.social-proof .buyers .buyer-card__person {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  gap: 1.25rem;
+}
+
+.social-proof .buyers .buyer-card__person .person__img {
+  border-radius: 10rem;
+  overflow: hidden;
+  scale: 0.7;
+}
+
+.social-proof .buyers .buyer-card__person .person__info {
+  padding-bottom: 0.75rem;
+}
+
+.social-proof .buyers .buyer-card__person .person__info .info__name {
+  font-weight: 700;
+}
+
+.social-proof .buyers .buyer-card__person .person__info .info__title {
+  color: #ee68a4;
+}
+
+.social-proof .buyers .buyer-card .buyer-card__review {
+  padding: .75rem;
+  font-size: 0.813rem;
 }
 /*# sourceMappingURL=style.css.map */

@@ -9,3 +9,12 @@ $breakpoints-up: ("medium": "40em", "large": "64em", "xlarge": "87.5rem");
 }
 
 // layout mixins
+@mixin flex-column(){
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+@mixin flex-row(){
+    display: flex;
+    flex-flow: row nowrap;
+}

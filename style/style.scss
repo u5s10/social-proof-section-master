@@ -10,10 +10,104 @@ body {
   display: grid;
   width: 100%;
   place-items: center;
-  padding: 1.250rem;
+  padding: 1.25rem;
 }
 
-.social-proof-section{
+.social-proof {
   max-width: 22.5rem;
   display: grid;
+  grid:
+    "desc" min-content
+    "reviews" min-content
+    "buyers" min-content /
+    1fr;
+
+  .description {
+    grid-area: desc;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1.25rem;
+    text-align: center;
+    .advert__header {
+      color: $very-dark-magenta;
+      font-size: 1.75rem;
+      margin-top: 2.5rem;
+      padding: 0 1.5rem;
+      line-height: 1;
+    }
+    .advert__content {
+      color: $dark-grayis-magenta;
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 0 0.5rem;
+    }
+  }
+
+  .company-reviews {
+    grid-area: reviews;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2.5rem 0;
+    .review {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      gap: 0.625rem;
+      &__stars {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 0.3125rem;
+        justify-content: center;
+      }
+      &__author {
+        text-align: center;
+        color: $very-dark-magenta;
+        font-weight: 700;
+        font-size: 0.75rem;
+      }
+    }
+  }
+
+  .buyers {
+    grid-area: buyers;
+    @include flex-column;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+    .buyer-card {
+      border-radius: 0.5rem;
+      overflow: hidden;
+      background-color: $very-dark-magenta;
+      color: $white;
+      padding: 1.5625rem 1.25rem;
+      @include flex-column;
+      align-items: start;
+      gap: 1.25rem;
+      &__person {
+        @include flex-row;
+        align-items: center;
+        justify-content: start;
+        gap: 1.25rem;
+        .person__img {
+          border-radius: 10rem;
+          overflow: hidden;
+          scale: 0.7;
+        }
+        .person__info {
+          padding-bottom: 0.75rem;
+          .info__name{
+            font-weight: 700;
+          }
+          .info__title{
+            color: $soft-pink; 
+          }
+        }
+      }
+      .buyer-card__review{
+        padding: .75rem;
+        font-size: 0.813rem;
+      }
+    }
+  }
 }
