@@ -77,6 +77,12 @@ select {
   }
 }
 
+html {
+  --font-size-header: clamp(1.75rem, 1.0000rem + 3.3333vw, 3.5rem);
+  --font-size-paragraph: clamp(0.875rem, 0.7357rem + 0.6190vw, 1.2rem);
+  --font-size-company-review: clamp(0.875rem, 0.8214rem + 0.2381vw, 1rem);
+}
+
 body {
   font-size: 0.9375rem;
   font-family: "Spartan", sans-serif;
@@ -95,6 +101,15 @@ body {
   grid: "desc" min-content "reviews" min-content "buyers" min-content / 1fr;
 }
 
+@media only screen and (min-width: 64em) {
+  .social-proof {
+    grid: "desc   reviews" -webkit-min-content "buyers buyers" -webkit-min-content / 1fr 1fr;
+    grid: "desc   reviews" min-content "buyers buyers" min-content / 1fr 1fr;
+    max-width: 76rem;
+    gap: 5rem;
+  }
+}
+
 .social-proof .description {
   grid-area: desc;
   display: -webkit-box;
@@ -108,17 +123,29 @@ body {
   text-align: center;
 }
 
+@media only screen and (min-width: 64em) {
+  .social-proof .description {
+    text-align: start;
+  }
+}
+
 .social-proof .description .advert__header {
   color: #502050;
-  font-size: 1.75rem;
+  font-size: var(--font-size-header);
   margin-top: 2.5rem;
   padding: 0 1.5rem;
   line-height: 1;
 }
 
+@media only screen and (min-width: 64em) {
+  .social-proof .description .advert__header {
+    padding-left: 0.5rem;
+  }
+}
+
 .social-proof .description .advert__content {
   color: #937b92;
-  font-size: 0.875rem;
+  font-size: var(--font-size-paragraph);
   font-weight: 500;
   padding: 0 0.5rem;
 }
@@ -135,8 +162,17 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-item-align: start;
+      align-self: start;
   gap: 2rem;
   margin: 2.5rem 0;
+}
+
+@media only screen and (min-width: 64em) {
+  .social-proof .company-reviews {
+    gap: 3.5rem;
+    padding-top: 2rem;
+  }
 }
 
 .social-proof .company-reviews .review {
@@ -151,6 +187,29 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 0.625rem;
+}
+
+@media only screen and (min-width: 64em) {
+  .social-proof .company-reviews .review {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -ms-flex-item-align: start;
+        align-self: start;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+  }
+  .social-proof .company-reviews .review:nth-of-type(2) {
+    padding-left: 2.5rem;
+  }
+  .social-proof .company-reviews .review:nth-of-type(3) {
+    padding-left: 5rem;
+  }
 }
 
 .social-proof .company-reviews .review__stars {
@@ -171,7 +230,7 @@ body {
   text-align: center;
   color: #502050;
   font-weight: 700;
-  font-size: 0.75rem;
+  font-size: var(--font-size-paragraph);
 }
 
 .social-proof .buyers {
@@ -185,6 +244,21 @@ body {
           flex-flow: column nowrap;
   gap: 1.25rem;
   margin-bottom: 2.5rem;
+}
+
+@media only screen and (min-width: 64em) {
+  .social-proof .buyers {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
 }
 
 .social-proof .buyers .buyer-card {
@@ -204,6 +278,15 @@ body {
       -ms-flex-align: start;
           align-items: start;
   gap: 1.25rem;
+}
+
+@media only screen and (min-width: 64em) {
+  .social-proof .buyers .buyer-card:nth-of-type(2) {
+    margin-top: 1rem;
+  }
+  .social-proof .buyers .buyer-card:nth-of-type(3) {
+    margin-top: 2rem;
+  }
 }
 
 .social-proof .buyers .buyer-card__person {
@@ -242,7 +325,7 @@ body {
 }
 
 .social-proof .buyers .buyer-card .buyer-card__review {
-  padding: .75rem;
+  padding: 0.75rem;
   font-size: 0.813rem;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,3 +1,9 @@
+html{
+    --font-size-header: clamp(1.75rem, 1.0000rem + 3.3333vw, 3.5rem);
+    --font-size-paragraph: clamp(0.875rem, 0.7357rem + 0.6190vw, 1.2rem);
+    --font-size-company-review: clamp(0.875rem, 0.8214rem + 0.2381vw, 1rem);
+}
+
 $very-dark-magenta: hsl(300, 43%, 22%);
 $soft-pink: hsl(333, 80%, 67%);
 $dark-grayis-magenta: hsl(303, 10%, 53%);
